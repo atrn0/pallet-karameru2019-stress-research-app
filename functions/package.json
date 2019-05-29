@@ -10,12 +10,9 @@
     "logs": "firebase functions:log"
   },
   "dependencies": {
-    "contentful": "^7.6.0",
-    "express": "^4.17.1",
     "firebase-admin": "^7.0.0",
     "firebase-functions": "^2.2.0",
-    "js-yaml": "^3.13.1",
-    "pug": "^2.0.3"
+    "nuxt": "^2.7.1"
   },
   "devDependencies": {
     "eslint": "^5.12.0",
