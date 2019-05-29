@@ -11,8 +11,9 @@
   },
   "dependencies": {
     "express": "^4.17.1",
-    "firebase-admin": "~7.0.0",
-    "firebase-functions": "^2.2.0"
+    "firebase-admin": "^7.0.0",
+    "firebase-functions": "^2.2.0",
+    "js-yaml": "^3.13.1"
   },
   "devDependencies": {
     "eslint": "^5.12.0",
