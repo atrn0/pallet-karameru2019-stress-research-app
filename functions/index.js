@@ -3,20 +3,40 @@ const functions = require('firebase-functions');
 const express = require('express');
 const fs = require('fs');
 const yaml = require('js-yaml');
-const path = require('path');
-
+const contentful = require('contentful');
 
 admin.initializeApp(functions.config().firebase);
 
+let client = contentful.createClient({
+  space: 'hv1v2mwqnicv',
+  accessToken: 'AtHW_BU_Bjr_FH82-JgTwu0a2W4vx9A6Bw5wfgjbzDs'
+})
+
 // get questions
-let questions;
-try {
-  const qFile = fs.readFileSync('./resource/questions.yml', 'utf-8');
-  questions = yaml.safeLoad(qFile);
-  console.log('load questions.yaml!')
-} catch (err) {
-  console.log(err);
+let questions = [];
+function getQuestions() {
+  client
+    .getEntries({
+      content_type: 'questionSet'
+    })
+    .then((entries) => {
+      questions = entries.items.map((item) => {
+        return {
+          "about": item.fields.about,
+          "body": item.fields.body.map((body) => {
+            return body.fields;
+          })
+        }
+      });
+      console.log('get questions!')
+      return;
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 }
+
+getQuestions();
 
 const app = express();
 app.set('views', './views');
@@ -26,14 +46,9 @@ app.get('/', (req, res) => {
   res.render('index', { title: 'ストレス診断' });
 });
 
-app.get('/questions.json', (request, response) => {
-  response.json(questions);
+app.get('/questions.json', (req, res) => {
+  getQuestions();
+  res.json(questions);
 });
-
-// app.get('/edit', (req, res) => {
-
-// });
-
-
 
 exports.app = functions.https.onRequest(app);
