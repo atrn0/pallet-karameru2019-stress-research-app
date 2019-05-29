@@ -1,0 +1,37 @@
+extends _layout
+
+block content
+  #app.container
+    div(v-if="loading") Loading...
+    div(v-else)
+      ol
+        div(v-for="(set, i) in questions")
+          li
+            p {{set.about}}
+              table
+                tr
+                  th 質問
+                  th 値を反転する
+                tr(v-for="(q, j) in set.body") 
+                  td {{q.question}}
+                  td
+                    input(type="checkbox" v-model="q.reversePoint")
+      
+      .newQ
+        h2 新しい質問を追加する
+        p 問題セット: 
+        select(v-model="newQ.set")
+          option(disabled value="") 問題セットを選択してください。
+          option(v-for="(set, i) in questions") {{i+1}}
+        div(v-if="newQ.set != ''")
+          span 質問
+            input(v-model="newQ.question" placeholder="edit me")
+          span 値を反転する
+            input(type="checkbox" v-model="newQ.reversePoint")
+          button(v-if="newQ.question != ''" v-on:click="addQuestion") 追加
+
+
+
+
+
+  script(src='/js/edit.js')

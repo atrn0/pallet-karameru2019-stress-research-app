@@ -1,0 +1,14 @@
+-
+  about: あなたの仕事についてうかがいます。最もあてはまるものに○を付けてください。
+  body: 
+    - question:  非常にたくさんの仕事をしなければならない
+      reversePoint: true
+    - question:  時間内に仕事が処理しきれない
+      reversePoint: true
+-
+  about: 最近1 か月間のあなたの状態についてうかがいます。最もあてはまるものに○を付けてください。
+  body: 
+    - question:  活気がわいてくる
+      reversePoint: false
+    - question:  元気がいっぱいだ
+      reversePoint: false
