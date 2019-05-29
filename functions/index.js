@@ -3,6 +3,7 @@ const functions = require('firebase-functions');
 const express = require('express');
 const fs = require('fs');
 const yaml = require('js-yaml');
+const path = require('path');
 
 
 admin.initializeApp(functions.config().firebase);
@@ -17,12 +18,21 @@ try {
   console.log(err);
 }
 
-
-
 const app = express();
+app.set('views', './views');
+app.set('view engine', 'pug');
+
+app.get('/', (req, res) => {
+  res.render('index', { title: 'ストレス診断' });
+});
+
 app.get('/questions.json', (request, response) => {
   response.json(questions);
 });
+
+// app.get('/edit', (req, res) => {
+
+// });
 
 
 
