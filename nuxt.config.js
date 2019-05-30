@@ -40,6 +40,8 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
+    ['nuxt-buefy',
+      'node-sass']
   ],
 
   /*
