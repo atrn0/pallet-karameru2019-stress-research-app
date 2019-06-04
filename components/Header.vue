@@ -49,7 +49,7 @@ export default {
   }
 
   & .panda1 img {
-    max-width: 300px;
+    max-width: 40vh;
     position: relative;
     left: -100px;
     animation: panda1 1.8s ease 0s infinite alternate;
@@ -59,11 +59,6 @@ export default {
     position: absolute;
     bottom: 1.5rem;
     left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
     animation: down_button 0.8s ease-in infinite alternate;
     & img {
       height: 3rem;
@@ -73,10 +68,10 @@ export default {
 
 @keyframes down_button {
   100% {
-    transform: translateY(0);
+    transform: translate(-50%, 0);
   }
   0% {
-    transform: translateY(-1rem);
+    transform: translate(-50%, -1rem);
   }
 }
 
