@@ -2,10 +2,10 @@
 div
   .question
     .question-text Q{{questionIdx+1}}: {{questionText}}
-    .buttons.has-addons.is-centered
-      span.button.q-input.is-info.is-small(v-for="(e, i) in ['そうだ', 'まあそうだ', 'ややちがう', 'ちがう']")
+    .buttons.is-centered
+      span(v-for="(e, i) in ['そうだ', 'まあそうだ', 'ややちがう', 'ちがう']")
         input(type="radio" :value="reversePoint ? 4-i : i+1" :id="setIdx+'-'+questionIdx+'-'+i" v-model="points[setIdx][questionIdx]")
-        label(:class="'button'+i" :for="setIdx+'-'+questionIdx+'-'+i") {{e}}
+        label(:for="setIdx+'-'+questionIdx+'-'+i") {{e}}
 </template>
 
 <script>
@@ -15,29 +15,32 @@ export default {
 </script>
 
 <style lang="scss">
+@import "~/assets/colors.scss";
+
 .question {
-  margin: 1rem;
+  margin: 1.5rem 4vw;
 }
-.question .buttons .button {
-  border: 0;
+
+.question .buttons span {
   padding: 0;
+  font-size: 0.7rem;
+  margin: 0.2rem;
   & label {
+    border-radius: 13.5px;
+    border: solid 1px #333;
     height: 100%;
     padding: 0.5rem;
     padding-bottom: calc(0.375em - 1px);
     padding-top: calc(0.375em - 1px);
-  }
-  & .button0 {
-    border-radius: 3px 0 0 3px;
-  }
-  & .button3 {
-    border-radius: 0 3px 3px 0;
+    transition-duration: 300ms;
+    transition-timing-function: ease;
   }
   & input {
     display: none;
   }
   & input[type="radio"]:checked + label {
-    background: darkblue;
+    color: #fff;
+    background: $theme-color;
   }
 }
 </style>

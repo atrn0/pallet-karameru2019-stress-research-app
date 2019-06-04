@@ -4,19 +4,24 @@
   </div>
 </template>
 
-<style>
+<style lang="scss">
+@import url("https://fonts.googleapis.com/css?family=Kosugi+Maru&display=swap");
+@import "~/assets/colors.scss";
+
 html {
-  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+  background: $theme-color;
 }
 
 body {
+  font-family: "Kosugi Maru", "Source Sans Pro", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: white;
 }
 
 *,

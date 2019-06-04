@@ -7,16 +7,17 @@
         .rect3
         .rect4
         .rect5
-    .loaded(v-else)
+    .loaded#questions(v-else)
       .set(v-for="(set, setIdx) in questions")
         h3.set-title {{set.about}}
-        Question(v-for="(body, questionIdx) in set.body" 
-          :key="body.question" 
-          :questionText="body.question" 
-          :reversePoint="body.reversePoint" 
-          :questionIdx="questionIdx" 
-          :points="points"
-          :setIdx="setIdx")
+        .questions
+          Question(v-for="(body, questionIdx) in set.body" 
+            :key="body.question" 
+            :questionText="body.question" 
+            :reversePoint="body.reversePoint" 
+            :questionIdx="questionIdx" 
+            :points="points"
+            :setIdx="setIdx")
       p あなたの点数は{{sumOfPoints()}}点です。
 </template>
 
@@ -77,13 +78,31 @@ export default {
 </script>
 
 <style lang="scss">
+@import "~/assets/colors.scss";
+
+.set {
+  padding-top: 2rem;
+}
+
+.set-title {
+  text-align: justify;
+}
+
+.questions {
+  background: #eee;
+  color: #333;
+  padding: 1rem 0;
+  margin: 1rem 0;
+  border-radius: 1rem;
+  filter: drop-shadow(0 0 0.2rem #333);
+}
+
 .loading {
   height: 100vh;
   width: 100vw;
   position: fixed;
   left: 0;
   top: 0;
-  background: #2c3e50;
   .spinner {
     margin: 100px auto;
     width: 50px;

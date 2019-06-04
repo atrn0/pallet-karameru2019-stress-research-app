@@ -1,20 +1,26 @@
 <template lang="pug">
-  #app.container
-    Questions
+  div
+    Header
+    #app.container
+      Questions
 </template>
 
 <script>
 import Questions from "./../components/Questions";
+import Header from "./../components/Header";
 export default {
   components: {
-    Questions
+    Questions,
+    Header
   }
 };
 </script>
 
-<style>
+<style lang="scss">
+@import "~/assets/colors.scss";
 .container {
-  margin: 5vh 5vw;
+  width: 95vw;
+  max-width: 600px;
   align-items: center;
 }
 </style>
