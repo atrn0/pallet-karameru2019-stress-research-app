@@ -1,0 +1,364 @@
+{
+  "sys": {
+    "type": "Array"
+  },
+  "total": 2,
+  "skip": 0,
+  "limit": 100,
+  "items": [
+    {
+      "fields": {
+        "about": "最近1 か月間のあなたの状態についてうかがいます。最もあてはまるものに○を付けてください。",
+        "body": [
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "6KGzgHj3GoMscR6K4dq01m"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "6VcuRsGsyyPwRK2MRf9vme"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "5EwRuNRDSBr7HUwhSyTBSh"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "5EzVQbOiLl1UgOAhsMXrtI"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "bbeQ4MIGCV3BQlcXSs6yt"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fields": {
+        "about": "あなたの仕事についてうかがいます。最もあてはまるものに○を付けてください。",
+        "body": [
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "364vGH6N3MsAbgmcAkwA6Z"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "5MYryZAscgmDKAxZNIAkvr"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "VkpNe5NjsKGs52RZqEPm2"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "includes": {
+    "Entry": [
+      {
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "hv1v2mwqnicv"
+            }
+          },
+          "id": "364vGH6N3MsAbgmcAkwA6Z",
+          "type": "Entry",
+          "createdAt": "2019-05-29T06:47:00.445Z",
+          "updatedAt": "2019-05-29T07:53:59.198Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 2,
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "question"
+            }
+          },
+          "locale": "en-US"
+        },
+        "fields": {
+          "question": "非常にたくさんの仕事をしなければならない",
+          "reversePoint": true
+        }
+      },
+      {
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "hv1v2mwqnicv"
+            }
+          },
+          "id": "5EwRuNRDSBr7HUwhSyTBSh",
+          "type": "Entry",
+          "createdAt": "2019-05-30T04:30:25.456Z",
+          "updatedAt": "2019-05-30T04:30:25.456Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 1,
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "question"
+            }
+          },
+          "locale": "en-US"
+        },
+        "fields": {
+          "question": "だるい",
+          "reversePoint": true
+        }
+      },
+      {
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "hv1v2mwqnicv"
+            }
+          },
+          "id": "5EzVQbOiLl1UgOAhsMXrtI",
+          "type": "Entry",
+          "createdAt": "2019-05-30T04:37:08.040Z",
+          "updatedAt": "2019-05-30T04:37:08.040Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 1,
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "question"
+            }
+          },
+          "locale": "en-US"
+        },
+        "fields": {
+          "question": "気がはりつめている",
+          "reversePoint": true
+        }
+      },
+      {
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "hv1v2mwqnicv"
+            }
+          },
+          "id": "5MYryZAscgmDKAxZNIAkvr",
+          "type": "Entry",
+          "createdAt": "2019-05-29T07:53:59.185Z",
+          "updatedAt": "2019-05-29T07:53:59.185Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 1,
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "question"
+            }
+          },
+          "locale": "en-US"
+        },
+        "fields": {
+          "question": "時間内に仕事が処理しきれない",
+          "reversePoint": true
+        }
+      },
+      {
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "hv1v2mwqnicv"
+            }
+          },
+          "id": "6KGzgHj3GoMscR6K4dq01m",
+          "type": "Entry",
+          "createdAt": "2019-05-30T04:29:38.933Z",
+          "updatedAt": "2019-05-30T04:29:38.933Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 1,
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "question"
+            }
+          },
+          "locale": "en-US"
+        },
+        "fields": {
+          "question": "ひどく疲れた",
+          "reversePoint": true
+        }
+      },
+      {
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "hv1v2mwqnicv"
+            }
+          },
+          "id": "6VcuRsGsyyPwRK2MRf9vme",
+          "type": "Entry",
+          "createdAt": "2019-05-30T04:30:04.761Z",
+          "updatedAt": "2019-05-30T04:30:04.761Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 1,
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "question"
+            }
+          },
+          "locale": "en-US"
+        },
+        "fields": {
+          "question": "へとへとだ",
+          "reversePoint": true
+        }
+      },
+      {
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "hv1v2mwqnicv"
+            }
+          },
+          "id": "VkpNe5NjsKGs52RZqEPm2",
+          "type": "Entry",
+          "createdAt": "2019-05-29T09:42:10.697Z",
+          "updatedAt": "2019-05-29T09:42:10.697Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 1,
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "question"
+            }
+          },
+          "locale": "en-US"
+        },
+        "fields": {
+          "question": "一生懸命働かなければならない",
+          "reversePoint": true
+        }
+      },
+      {
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "hv1v2mwqnicv"
+            }
+          },
+          "id": "bbeQ4MIGCV3BQlcXSs6yt",
+          "type": "Entry",
+          "createdAt": "2019-05-30T04:48:11.983Z",
+          "updatedAt": "2019-05-30T04:48:11.983Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 1,
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "question"
+            }
+          },
+          "locale": "en-US"
+        },
+        "fields": {
+          "question": "不安だ",
+          "reversePoint": true
+        }
+      }
+    ]
+  }
+}
