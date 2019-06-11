@@ -1,6 +1,8 @@
 # stress-research-app
 
-> Pallet karameru 2019 stress research app
+Pallet karameru 2019 stress research app
+
+Nuxt.jsで作っています。
 
 ## Build Setup
 
