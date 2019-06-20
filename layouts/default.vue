@@ -5,7 +5,6 @@
 </template>
 
 <style lang="scss">
-@import url("https://fonts.googleapis.com/css?family=Kosugi+Maru&display=swap");
 @import "~/assets/colors.scss";
 
 html {
@@ -19,8 +18,8 @@ html {
 }
 
 body {
-  font-family: "Kosugi Maru", "Source Sans Pro", -apple-system,
-    BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: "Kosugi Maru", Roboto, "Source Sans Pro", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   color: white;
 }
 
