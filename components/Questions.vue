@@ -16,7 +16,7 @@
       #result
         .result(v-if="answered")
           img(:src="resultImgSrc")
-          p.result_message {{resultMessage}}
+          p.result_message あなたの点数は{{sumOfPoints()}}点でした。 {{resultMessage}}
           a.button(href="/") もう1回診断する
 </template>
 
@@ -43,7 +43,8 @@ export default {
       points: [],
       answered: false,
       resultMessage: "",
-      resultImgSrc: ""
+      resultImgSrc: "",
+      maxpoints: 1
     };
   },
   methods: {
@@ -87,10 +88,9 @@ export default {
             })
           };
         });
-        console.log("get questions!");
-        console.log(JSON.stringify(this.questions));
       })
       .then(() => {
+        this.maxpoints = this.questions.length * 4;
         for (let i = 0; i < this.questions.length; i++) {
           this.points.push(new Array(this.questions[i].body.length).fill(0));
         }
