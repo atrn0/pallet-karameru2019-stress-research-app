@@ -58,7 +58,7 @@ export default {
         this.resultImgSrc = imopanda;
       } else {
         this.resultMessage =
-          "あなたはストレスが多いぱん！\nしっかりパンフ・パネルを読んでリラックス方法を知ろう！";
+          "あなたはストレスが多いぱん！\nしっかりパンフレット・パネルを読んでリラックス方法を知ろう！";
         this.resultImgSrc = tired_panda;
       }
       this.answered = true;
@@ -137,8 +137,8 @@ export default {
     transition-duration: 300ms;
     transition-timing-function: ease;
     background: #eee;
-    height: 40px;
-    border-radius: 40px;
+    height: 4rem;
+    border-radius: 4rem;
   }
 }
 
