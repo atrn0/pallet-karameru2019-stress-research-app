@@ -22,5 +22,6 @@ export default {
   width: 95vw;
   max-width: 600px;
   align-items: center;
+  white-space: pre-line;
 }
 </style>

@@ -49,9 +49,10 @@ export default {
   }
 
   & .panda1 img {
-    max-width: 40vh;
+    height: 40vh;
+    max-width: 70vw;
     position: relative;
-    left: -100px;
+    left: -10vw;
     animation: panda1 1.8s ease 0s infinite alternate;
   }
 

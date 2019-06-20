@@ -1,13 +1,6 @@
 <template lang="pug">
   div
-    .loading(v-if="loading")
-      .spinner
-        .rect1
-        .rect2
-        .rect3
-        .rect4
-        .rect5
-    .loaded#questions(v-else)
+    .loaded#questions(v-if="!loading")
       .set(v-for="(set, setIdx) in questions")
         h3.set-title {{set.about}}
         .questions
@@ -18,7 +11,13 @@
             :questionIdx="questionIdx" 
             :points="points"
             :setIdx="setIdx")
-      p あなたの点数は{{sumOfPoints()}}点です。
+      .show_result_button
+        a.button(v-on:click="showResults" href="#" @click="clickSmoothScroll()") 結果をみる
+      #result
+        .result(v-if="answered")
+          img(:src="resultImgSrc")
+          p.result_message {{resultMessage}}
+          a.button(href="/") もう1回診断する
 </template>
 
 
@@ -29,6 +28,10 @@ import Question from "./Question";
 // plugins
 import { createClient } from "~/plugins/contentful.js";
 
+// photos
+import tired_panda from "~/assets/tired_panda.svg";
+import imopanda from "~/assets/imopanda.svg";
+
 const client = createClient();
 
 export default {
@@ -37,12 +40,37 @@ export default {
       questions: null,
       errored: false,
       loading: true,
-      points: []
+      points: [],
+      answered: false,
+      resultMessage: "",
+      resultImgSrc: ""
     };
   },
   methods: {
     sumOfPoints: function() {
       return this.points.flat().reduce((a, b) => a + b);
+    },
+    showResults: function() {
+      if (this.sumOfPoints() < 40) {
+        this.resultMessage =
+          "あなたはそんなにストレスはなさそうだぱんね！\nこのまま安らかな生活を送ろう";
+        this.resultImgSrc = imopanda;
+      } else {
+        this.resultMessage =
+          "あなたはストレスが多いぱん！\nしっかりパンフ・パネルを読んでリラックス方法を知ろう！";
+        this.resultImgSrc = tired_panda;
+      }
+      this.answered = true;
+    },
+    clickSmoothScroll() {
+      event.preventDefault();
+      this.$SmoothScroll(
+        document.querySelector("#result"),
+        400,
+        null,
+        null,
+        "y"
+      );
     }
   },
   mounted: function() {
@@ -80,6 +108,10 @@ export default {
 <style lang="scss">
 @import "~/assets/colors.scss";
 
+.loaded {
+  margin: 3rem 0;
+}
+
 .set {
   padding-top: 2rem;
 }
@@ -96,74 +128,63 @@ export default {
   border-radius: 1rem;
   filter: drop-shadow(0 0 0.2rem #333);
 }
-
-.loading {
-  height: 100vh;
-  width: 100vw;
-  position: fixed;
-  left: 0;
-  top: 0;
-  .spinner {
-    margin: 100px auto;
-    width: 50px;
+.loaded {
+  & .button {
+    border: solid 1px #333;
+    padding: 0.5rem;
+    padding-bottom: calc(0.375em - 1px);
+    padding-top: calc(0.375em - 1px);
+    transition-duration: 300ms;
+    transition-timing-function: ease;
+    background: #eee;
     height: 40px;
-    text-align: center;
-    font-size: 10px;
-  }
-
-  .spinner > div {
-    background-color: white;
-    height: 100%;
-    width: 6px;
-    display: inline-block;
-    margin: 0 2px;
-
-    -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
-    animation: sk-stretchdelay 1.2s infinite ease-in-out;
-  }
-
-  .spinner .rect2 {
-    -webkit-animation-delay: -1.1s;
-    animation-delay: -1.1s;
-  }
-
-  .spinner .rect3 {
-    -webkit-animation-delay: -1s;
-    animation-delay: -1s;
-  }
-
-  .spinner .rect4 {
-    -webkit-animation-delay: -0.9s;
-    animation-delay: -0.9s;
-  }
-
-  .spinner .rect5 {
-    -webkit-animation-delay: -0.8s;
-    animation-delay: -0.8s;
+    border-radius: 40px;
   }
 }
 
-@-webkit-keyframes sk-stretchdelay {
-  0%,
-  40%,
-  100% {
-    -webkit-transform: scaleY(0.4);
-  }
-  20% {
-    -webkit-transform: scaleY(1);
-  }
+.show_result_button {
+  text-align: right;
 }
 
-@keyframes sk-stretchdelay {
-  0%,
-  40%,
-  100% {
-    transform: scaleY(0.4);
-    -webkit-transform: scaleY(0.4);
+.result {
+  height: 100vh;
+  text-align: center;
+  & img {
+    height: 60vh;
+    max-width: 500px;
+    position: relative;
+    bottom: -3rem;
   }
-  20% {
-    transform: scaleY(1);
-    -webkit-transform: scaleY(1);
+  & .result_message {
+    margin: 2rem 0;
+    padding: 1rem;
+    background: #eee;
+    color: #333;
+    border-radius: 1rem;
+    filter: drop-shadow(0 0 0.2rem #333);
+    text-align: left;
+
+    & :before {
+      content: "";
+      position: absolute;
+      bottom: -24px;
+      left: 50%;
+      margin-left: -15px;
+      border: 12px solid transparent;
+      border-top: 12px solid #fff;
+      z-index: 2;
+    }
+
+    & :after {
+      content: "";
+      position: absolute;
+      bottom: -30px;
+      left: 50%;
+      margin-left: -17px;
+      border: 14px solid transparent;
+      border-top: 14px solid #555;
+      z-index: 1;
+    }
   }
 }
 </style>
